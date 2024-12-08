@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="templates_style.css">
+    <script defer src="tasks.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Составьте план работ</h2>
+        <form id="tasks-form" action="#">
+            <div class="task" id="task-1">
+                <fieldset>
+                    <legend>Задача №1</legend>
+                    
+                    <label for="task-1-task">Задача:</label>
+                    <textarea id="task-1-task" name="task" placeholder="Введите описание задачи" rows="2" required></textarea>
+                    
+                    <label for="task-1-event">Мероприятие:</label>
+                    <textarea id="task-1-event" name="event" placeholder="Введите мероприятие" rows="2" required></textarea>
+                    
+                    <label for="task-1-work">Работа:</label>
+                    <textarea id="task-1-work" name="work" placeholder="Введите описание работы" rows="2" required></textarea>
+                    
+                    <label for="task-1-responsible">Ответственный:</label>
+                    <input type="text" id="task-1-responsible" name="responsible" placeholder="Введите имя" required>
+                    
+                    <label for="task-1-deadline">Срок:</label>
+                    <input type="date" id="task-1-deadline" name="deadline" required>
+                    
+                    <label for="task-1-result">Результат:</label>
+                    <textarea id="task-1-result" name="result" placeholder="Введите ожидаемый результат" rows="2" required></textarea>
+                    
+                    <label for="task-1-resources">Необходимые ресурсы:</label>
+                    <textarea id="task-1-resources" name="resources" placeholder="Введите необходимые ресурсы" rows="3" required></textarea>
+                    
+                    <label for="task-1-coexecutors">Соисполнители:</label>
+                    <input type="text" id="task-1-coexecutors" name="coexecutors" placeholder="Введите соисполнителей">
+                    
+                    <label for="task-1-comments">Комментарии:</label>
+                    <textarea id="task-1-comments" name="comments" placeholder="Введите комментарии" rows="2"></textarea>
+                </fieldset>
+            </div>
+            
+            <button type="button" id="add-task" class="add-task-btn">+ Добавить задачу</button>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>
