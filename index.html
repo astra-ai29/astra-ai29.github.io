@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Опросник AI-помощника</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="survey_ai_style.css">
 </head>
 <body>
     <div class="survey-container">
@@ -325,19 +325,17 @@
             <button type="submit">Отправить</button>
         </form>
 
-        
-        <!-- Вывод результатов -->
-        <div id="results" class="results">
+        <div id="results" class="results" style="display: none;">
             <h3>Результаты по каждому блоку</h3>
-            <p id="block1-result">Блок 1 (Задачи): </p>
-            <p id="block2-result">Блок 2 (Люди): </p>
-            <p id="block3-result">Блок 3 (Система стимулирования): </p>
-            <p id="block4-result">Блок 4 (Бизнес-процессы): </p>
-            <p id="block5-result">Блок 5 (Организационная структура): </p>
+            <p id="block1-result"></p>
+            <p id="block2-result"></p>
+            <p id="block3-result"></p>
+            <p id="block4-result"></p>
+            <p id="block5-result"></p>
         </div>
-
+        
         <!-- Канвас для радарного графика -->
-        <div id="chart-container">
+        <div id="chart-container" style="display: none;">
             <canvas id="radarChart"></canvas>
         </div>
 
@@ -347,6 +345,6 @@
             <ul id="recommendation-list"></ul>
         </div>        
     </div>
-    <script src="script.js"></script>
+    <script src="survey_ai_script.js"></script>
 </body>
 </html>
