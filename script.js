@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
         {
             id: 'strategy',
             validAnswers: ['да', 'нет'],
-            recommendation: `Сразу же сформировать стратегию компании бывает непросто. Рекомендуем начать с формирования бизнес-цели на ближайший финансовый год. Шаблон доступен по <a href="business_goal.html" target="_blank">ссылке</a>.`, // добавил ссылку на шаблон
+            recommendation: `Сразу же сформировать стратегию компании бывает непросто. Рекомендуем начать с формирования бизнес-цели на ближайший финансовый год. Шаблон доступен по <a href="business_goal_form.html" target="_blank">ссылке</a>.`, // добавил ссылку на шаблон
             scoreMap: { 'да': 1, 'нет': 0 }
         },
         {
@@ -210,29 +210,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Обработка отправки формы
     const form = document.querySelector('form');
+
     form.addEventListener('submit', function (event) {
         event.preventDefault();
         recommendationsList.innerHTML = ''; // Очищаем предыдущие рекомендации
-        recommendations.style.display = 'none'; // Скрываем рекомендации до успешной обработки
+
+        block1Result.textContent = '';
+        block2Result.textContent = '';
+        block3Result.textContent = '';
+        block4Result.textContent = '';
+        block5Result.textContent = '';
+
+        const chartContainer = document.getElementById('chart-container');
+        chartContainer.innerHTML = '<canvas id="radarChart"></canvas>'; // Удаляем старую диаграмму
 
         try {
             const allRecommendations = [];
-
-            const formData = {
-                question_1: document.querySelector('.custom-select[data-id="strategy"] .custom-select-trigger')?.dataset.value || '',
-                question_2: document.querySelector('.custom-select[data-id="task_setting"] .custom-select-trigger')?.dataset.value || '',
-                question_3: parseInt(document.querySelector('.custom-select[data-id="overdue"] .custom-select-trigger')?.dataset.value || '0', 10),
-                question_4: document.querySelector('.custom-select[data-id="meeting_protocol"] .custom-select-trigger')?.dataset.value || '',
-                question_5: document.querySelector('.custom-select[data-id="protocol_to_task"] .custom-select-trigger')?.dataset.value || ''
-            };
-
-            console.log('Собранные данные формы:', formData);
-
-            // Проверяем заполнение всех полей
-            if (!formData.question_1 || !formData.question_2 || !formData.question_3 || !formData.question_4 || !formData.question_5) {
-                alert('Некоторые ответы отсутствуют! Проверьте, что вы заполнили все вопросы.');
-                return;
-            }
 
             // Подсчёт баллов для всех блоков
             const block1Sum = calculateBlockScore(block1Questions, allRecommendations);
@@ -251,7 +244,12 @@ document.addEventListener('DOMContentLoaded', function () {
             block3Result.textContent = `Блок 3 (Система стимулирования): ${block3Sum}`;
             block4Result.textContent = `Блок 4 (Бизнес-процессы): ${block4Sum}`;
             block5Result.textContent = `Блок 5 (Организационная структура): ${block5Sum}`;
+            
+            const results = document.getElementById('results');
+            results.style.display = 'block';
             recommendations.style.display = 'block'; // Отображаем рекомендации
+            const chartContainer = document.getElementById('chart-container');
+            chartContainer.style.display = 'block';
 
             // Добавляем рекомендации в список
             allRecommendations.forEach(rec => {
@@ -262,6 +260,38 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Построение диаграммы
             drawRadarChart([block1Sum, block2Sum, block3Sum, block4Sum, block5Sum]);
+
+            // Функция плавной прокрутки
+            function smoothScrollTo(targetY, duration) {
+                const startY = window.scrollY;
+                const distance = targetY - startY;
+                let startTime = null;
+            
+                function animationStep(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    const elapsedTime = timestamp - startTime;
+                    const progress = Math.min(elapsedTime / duration, 1); // Убедимся, что прогресс <= 1
+                    const ease = easeInOutQuad(progress); // Используем функцию плавности
+                    window.scrollTo(0, startY + distance * ease);
+            
+                    if (progress < 1) {
+                        requestAnimationFrame(animationStep);
+                    }
+                }
+            
+                requestAnimationFrame(animationStep);
+            }
+            
+            // Функция плавности (Ease In-Out)
+            function easeInOutQuad(t) {
+                return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+            }
+            
+            // Прокрутка до блока результатов
+            const resultsPosition = results.getBoundingClientRect().top + window.scrollY;
+            smoothScrollTo(resultsPosition, 1500); // Прокрутка длится 1000 мс
+
+
         } catch (error) {
             console.error('Ошибка обработки формы:', error.message);
             alert(error.message); // Показываем сообщение об ошибке пользователю
@@ -279,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     label: 'Оценка',
                     data,
                     backgroundColor: 'rgba(136, 190, 255, 0.2)',
-                    borderColor: 'rgba(136, 190, 255, 1)'
+                    borderColor: 'rgb(0, 115, 255)'
                 }]
             },
             options: {
