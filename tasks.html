@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задачи</title>
+    <link rel="stylesheet" href="tasks_style.css">
+    <script defer src="tasks.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Составьте план работ</h2>
+        <form id="tasks-form">
+            <fieldset>
+                <legend>Задача</legend>
+
+                <label for="task">Задача:</label>
+                <textarea id="task" name="task" placeholder="Введите описание задачи" rows="2" required></textarea>
+
+                <label for="event">Мероприятие:</label>
+                <textarea id="event" name="event" placeholder="Введите мероприятие" rows="2"></textarea>
+
+                <label for="work">Работа:</label>
+                <textarea id="work" name="work" placeholder="Введите описание работы" rows="2"></textarea>
+
+                <label for="responsible">Ответственный:</label>
+                <input type="text" id="responsible" name="responsible" placeholder="Введите имя" required>
+
+                <label for="deadline">Срок:</label>
+                <input type="date" id="deadline" name="deadline" required>
+
+                <label for="result">Результат:</label>
+                <textarea id="result" name="result" placeholder="Введите ожидаемый результат" rows="2" required></textarea>
+
+                <label for="resources">Необходимые ресурсы:</label>
+                <textarea id="resources" name="resources" placeholder="Введите необходимые ресурсы" rows="3" required></textarea>
+
+                <label for="coexecutors">Соисполнители:</label>
+                <input type="text" id="coexecutors" name="coexecutors" placeholder="Введите соисполнителей">
+
+                <label for="comments">Комментарии:</label>
+                <textarea id="comments" name="comments" placeholder="Введите комментарии" rows="2"></textarea>
+            </fieldset>
+
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+    </div>
+
+    <div class="table-wrapper">
+        <h3 class="table-title">Таблица всех задач</h3>
+    
+        <!-- Фильтр для поиска -->
+        <div class="filter-wrapper">
+            <select id="filter-column">
+                <option value="all">Все столбцы</option>
+                <option value="1">Задача</option>
+                <option value="2">Мероприятие</option>
+                <option value="3">Работа</option>
+                <option value="4">Ответственный</option>
+                <option value="5">Срок</option>
+                <option value="6">Результат</option>
+                <option value="7">Ресурсы</option>
+                <option value="8">Соисполнители</option>
+                <option value="9">Комментарии</option>
+            </select>
+            <input type="text" id="filter-input" placeholder="Поиск...">
+        </div>
+    
+        <!-- Таблица задач -->
+        <div class="table-container">
+            <table id="tasks-table">
+                <thead>
+                    <tr>
+                        <th data-column="number">
+                            <div class="header-content">
+                                <span class="header-text">№</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="task">
+                            <div class="header-content">
+                                <span class="header-text">Задача</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="event">
+                            <div class="header-content">
+                                <span class="header-text">Мероприятие</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="work">
+                            <div class="header-content">
+                                <span class="header-text">Работа</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="responsible">
+                            <div class="header-content">
+                                <span class="header-text">Ответственный</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="deadline">
+                            <div class="header-content">
+                                <span class="header-text">Срок</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="result">
+                            <div class="header-content">
+                                <span class="header-text">Результат</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="resources">
+                            <div class="header-content">
+                                <span class="header-text">Ресурсы</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="coexecutors">
+                            <div class="header-content">
+                                <span class="header-text">Соисполнители</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th data-column="comments">
+                            <div class="header-content">
+                                <span class="header-text">Комментарии</span>
+                                <div class="sort-controls">
+                                    <span class="sort-btn sort-asc" data-order="asc">▲</span>
+                                    <span class="sort-btn sort-desc" data-order="desc">▼</span>
+                                </div>
+                            </div>
+                        </th>
+                        <th>
+                            <div class="header-content">
+                                <span class="header-text">Действия</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Данные таблицы будут добавляться динамически -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
