@@ -32,7 +32,7 @@ h2 {
 h3 {
     color: #444;
     margin-top: 30px;
-    border-bottom: 2px solid #88BEFF;
+    border-bottom: 2px solid #2A63C2;
     padding-bottom: 5px;
 }
 
@@ -43,32 +43,54 @@ form {
 }
 
 label {
+    display: block;
+    margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
 }
 
 input[type="text"],
 input[type="number"],
 textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 14px;
+    width: 100%; /* Полная ширина контейнера */
+    max-width: 100%; /* Убедиться, что ширина не превышает контейнер */
+    padding: 10px; /* Внутренний отступ */
+    border: 1px solid #cccccc; /* Стандартный цвет рамки */
+    border-radius: 4px; /* Скругленные углы */
+    box-sizing: border-box; /* Учитываем padding в ширину */
+    font-size: 16px; /* Размер текста */
+    margin-bottom: 15px; /* Отступ снизу */
+    resize: vertical; /* Разрешить изменение размера только по вертикали */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Плавный переход */
 }
 
 input[type="text"]:focus,
 input[type="number"]:focus,
 textarea:focus {
-    border-color: #88BEFF;
-    outline: none;
-    box-shadow: 0 0 5px rgba(136, 190, 255, 0.5);
+    border-color: #2A63C2; /* Цвет рамки при фокусе */
+    box-shadow: 0 0 5px rgba(42, 99, 194, 0.5); /* Тень при фокусе */
+    outline: none; /* Убираем стандартное выделение */
+}
+
+input[type="radio"] {
+    margin-right: 10px;
 }
 
 textarea {
     resize: vertical;
     min-height: 80px;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    border: 2px solid #2A63C2;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 18px;
+    color: #2A63C2;
 }
 
 /* Контейнер кастомного списка */
