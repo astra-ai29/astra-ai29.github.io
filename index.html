@@ -12,11 +12,46 @@
         <h2>Опросник</h2>
         <form action="">
 
+            <!-- ВСТУПИТЕЛЬНЫЕ ВОПРОСЫ -->
+            <h3>ВСТУПИТЕЛЬНЫЕ ВОПРОСЫ</h3>
+            <fieldset>
+                <legend>Вопросы 1-10</legend>
+                <label for="q1">1. Напишите, пожалуйста, как удобнее к вам обращаться:</label>
+                <textarea id="q1" name="q1" placeholder="Введите ответ"></textarea>
+
+                <label for="q2">2. Как называется ваша компания?</label>
+                <textarea id="q2" name="q2" placeholder="Введите ответ"></textarea>
+
+                <label for="q3">3. Укажите, пожалуйста, сайт компании или ссылку на соцсети:</label>
+                <textarea id="q3" name="q3" placeholder="Введите ответ"></textarea>
+
+                <label for="q4">4. Каким видом/видами деятельности занимается ваша компания?</label>
+                <textarea id="q4" name="q4" placeholder="Введите ответ"></textarea>
+
+                <label for="q5">5. Назовите, пожалуйста, ваш статус в компании:</label>
+                <textarea id="q5" name="q5" placeholder="Введите ответ"></textarea>
+
+                <label for="q6">6. Назовите, пожалуйста, должность, занимаемую вами в компании:</label>
+                <textarea id="q6" name="q6" placeholder="Введите ответ"></textarea>
+
+                <label for="q7">7. Сколько человек работает в вашей компании?</label>
+                <textarea id="q7" name="q7" placeholder="Введите ответ"></textarea>
+
+                <label for="q8">8. Назовите, пожалуйста, годовую выручку вашей компании в рублях:</label>
+                <textarea id="q8" name="q8" placeholder="Введите ответ"></textarea>
+
+                <label for="q9">9. Назовите, пожалуйста, численность управленческого персонала вашей компании:</label>
+                <textarea id="q9" name="q9" placeholder="Введите ответ"></textarea>
+
+                <label for="q10">10. Сколько человек находится в вашем прямом подчинении?</label>
+                <textarea id="q10" name="q10" placeholder="Введите ответ"></textarea>
+            </fieldset>
+
             <!-- БЛОК №1. Задачи -->
             <h3>БЛОК №1. Задачи</h3>
 
             <div class="custom-select-wrapper">
-                <label for="strategy">1. Есть ли у вашей компании оформленная стратегия?</label>
+                <label for="strategy">11. Есть ли у вашей компании оформленная стратегия?</label>
                 <div class="custom-select" data-id="strategy">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -27,7 +62,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="task_setting">2. Каким образом вы сейчас ставите задачи своим сотрудникам/контролируете их исполнение?</label>
+                <label for="task_setting">12. Каким образом вы сейчас ставите задачи своим сотрудникам/контролируете их исполнение?</label>
                 <div class="custom-select" data-id="task_setting">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -41,7 +76,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="overdue">3. Какой процент задач попадает в категорию просроченных?</label>
+                <label for="overdue">13. Какой процент задач попадает в категорию просроченных?</label>
                 <div class="custom-select" data-id="overdue">
                     <div class="custom-select-trigger" data-value="">Выберите процент</div>
                     <ul class="custom-options">
@@ -60,7 +95,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="meeting_protocol">4. Ведете ли вы протокол совещания?</label>
+                <label for="meeting_protocol">14. Ведете ли вы протокол совещания?</label>
                 <div class="custom-select" data-id="meeting_protocol">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -71,7 +106,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="protocol_to_task">5. Как пункты протокола превращаются в задачи для сотрудников?</label>
+                <label for="protocol_to_task">15. Как пункты протокола превращаются в задачи для сотрудников?</label>
                 <div class="custom-select" data-id="protocol_to_task">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -88,7 +123,7 @@
             <h3>БЛОК №2. Люди</h3>
 
             <div class="custom-select-wrapper">
-                <label for="job_portrait">6. Есть ли у вас четкий портрет каждой должности?</label>
+                <label for="job_portrait">16. Есть ли у вас четкий портрет каждой должности?</label>
                 <div class="custom-select" data-id="job_portrait">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -99,7 +134,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="instructions">7. Есть ли у ваших сотрудников должностные инструкции?</label>
+                <label for="instructions">17. Есть ли у ваших сотрудников должностные инструкции?</label>
                 <div class="custom-select" data-id="instructions">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -110,7 +145,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="full_efficiency">8. Через какое время вы можете сказать, что сотрудник начинает работать на 100%?</label>
+                <label for="full_efficiency">18. Через какое время вы можете сказать, что сотрудник начинает работать на 100%?</label>
                 <div class="custom-select" data-id="full_efficiency">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -123,7 +158,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="mentorship">9. Есть ли на предприятии система наставничества?</label>
+                <label for="mentorship">19. Есть ли на предприятии система наставничества?</label>
                 <div class="custom-select" data-id="mentorship">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -134,7 +169,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="training">10. Есть ли на предприятии система обучения сотрудников?</label>
+                <label for="training">20. Есть ли на предприятии система обучения сотрудников?</label>
                 <div class="custom-select" data-id="training">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -148,7 +183,7 @@
             <h3>БЛОК №3. Система стимулирования</h3>
 
             <div class="custom-select-wrapper">
-                <label for="payment">11. Есть ли на предприятии положение об оплате труда?</label>
+                <label for="payment">21. Есть ли на предприятии положение об оплате труда?</label>
                 <div class="custom-select" data-id="payment">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -159,7 +194,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="stimulation_methods">12. Есть ли еще какие-то методы стимулирования (помимо оплаты труда) на предприятии?</label>
+                <label for="stimulation_methods">22. Есть ли еще какие-то методы стимулирования (помимо оплаты труда) на предприятии?</label>
                 <div class="custom-select" data-id="stimulation_methods">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -170,7 +205,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="visual_stimulation">13. Визуализирована ли ваша система стимулирования?</label>
+                <label for="visual_stimulation">23. Визуализирована ли ваша система стимулирования?</label>
                 <div class="custom-select" data-id="visual_stimulation">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -181,7 +216,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="corporate_culture">14. Описана ли в каком-либо документе ваша организационная/корпоративная культура?</label>
+                <label for="corporate_culture">24. Описана ли в каком-либо документе ваша организационная/корпоративная культура?</label>
                 <div class="custom-select" data-id="corporate_culture">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -192,7 +227,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="roles">15. Четко ли ваши сотрудники представляют свой функционал, цель и задачи компании, перспективы карьерного роста?</label>
+                <label for="roles">25. Четко ли ваши сотрудники представляют свой функционал, цель и задачи компании, перспективы карьерного роста?</label>
                 <div class="custom-select" data-id="roles">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -206,7 +241,7 @@
             <h3>БЛОК №4. Бизнес-процессы</h3>
 
             <div class="custom-select-wrapper">
-                <label for="business_processes">16. Описаны ли бизнес-процессы в вашей компании?</label>
+                <label for="business_processes">26. Описаны ли бизнес-процессы в вашей компании?</label>
                 <div class="custom-select" data-id="business_processes">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -217,7 +252,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="responsible_employee">17. Есть ли на предприятии сотрудник, отвечающий за описание и реорганизацию бизнес-процессов?</label>
+                <label for="responsible_employee">27. Есть ли на предприятии сотрудник, отвечающий за описание и реорганизацию бизнес-процессов?</label>
                 <div class="custom-select" data-id="responsible_employee">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -228,7 +263,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="software_use">18. Используется ли специальное ПО для реорганизации бизнес-процессов?</label>
+                <label for="software_use">28. Используется ли специальное ПО для реорганизации бизнес-процессов?</label>
                 <div class="custom-select" data-id="software_use">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -239,7 +274,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="regulations">19. Есть ли у вас на предприятии система регламентов?</label>
+                <label for="regulations">29. Есть ли у вас на предприятии система регламентов?</label>
                 <div class="custom-select" data-id="regulations">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -250,7 +285,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="quality_control">20. Осуществляете ли контроль качества исполнения бизнес-процессов?</label>
+                <label for="quality_control">30. Осуществляете ли контроль качества исполнения бизнес-процессов?</label>
                 <div class="custom-select" data-id="quality_control">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -264,7 +299,7 @@
             <h3>БЛОК №5. Организационная структура</h3>
 
             <div class="custom-select-wrapper">
-                <label for="org_structure">21. Назовите тип организационной структуры в вашей компании.</label>
+                <label for="org_structure">31. Назовите тип организационной структуры в вашей компании.</label>
                 <div class="custom-select" data-id="org_structure">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -279,7 +314,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="structure_visual">22. Организационная структура визуализирована?</label>
+                <label for="structure_visual">32. Организационная структура визуализирована?</label>
                 <div class="custom-select" data-id="structure_visual">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -290,7 +325,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="hierarchy">23. Сотрудник может ознакомиться с оргструктурой и понять свое место в ней?</label>
+                <label for="hierarchy">33. Сотрудник может ознакомиться с оргструктурой и понять свое место в ней?</label>
                 <div class="custom-select" data-id="hierarchy">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -301,7 +336,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="roles_knowledge">24. Сотрудник может узнать функционал других сотрудников?</label>
+                <label for="roles_knowledge">34. Сотрудник может узнать функционал других сотрудников?</label>
                 <div class="custom-select" data-id="roles_knowledge">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -312,7 +347,7 @@
             </div>
             
             <div class="custom-select-wrapper">
-                <label for="cross_tasks">25. Сотрудники разных подразделений могут ставить задачи друг другу?</label>
+                <label for="cross_tasks">35. Сотрудники разных подразделений могут ставить задачи друг другу?</label>
                 <div class="custom-select" data-id="cross_tasks">
                     <div class="custom-select-trigger" data-value="">Выберите ответ</div>
                     <ul class="custom-options">
@@ -322,6 +357,125 @@
                 </div>
             </div>            
             
+            <!-- ЗАВЕРШАЮЩИЕ ВОПРОСЫ -->
+            <h3>ЗАВЕРШАЮЩИЕ ВОПРОСЫ</h3>
+            <fieldset>
+                <legend>Вопросы 36-45</legend>
+                <label for="q36">36. Какие управленческие проблемы вы видите в своей деятельности?</label>
+
+                <div>
+                    <p>1. Я трачу слишком много времени на операционную деятельность</p>
+                    <label>
+                        <input type="radio" name="q36_1" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_1" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>2. Сотрудники плохо исполняют поручения</p>
+                    <label>
+                        <input type="radio" name="q36_2" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_2" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>3. У нас большая "текучка" кадров</p>
+                    <label>
+                        <input type="radio" name="q36_3" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_3" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>4. Мы приобрели программное обеспечение для решения наших управленческих задач, но оно не работает</p>
+                    <label>
+                        <input type="radio" name="q36_4" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_4" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>5. Я работаю круглосуточно, а мои топ-менеджеры и сотрудники нет</p>
+                    <label>
+                        <input type="radio" name="q36_5" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_5" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>6. Я не успеваю заниматься развитием компании</p>
+                    <label>
+                        <input type="radio" name="q36_6" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_6" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>7. У меня ненормированный рабочий день</p>
+                    <label>
+                        <input type="radio" name="q36_7" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_7" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>8. Я вынужден по 10 раз напоминать про свои поручения, и часть из них все равно не исполняется</p>
+                    <label>
+                        <input type="radio" name="q36_8" value="да"> Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q36_8" value="нет"> Нет
+                    </label>
+                </div>
+            
+                <div>
+                    <p>9. Свой вариант</p>
+                    <textarea id="q36_9" name="q36_9" placeholder="Введите ваш вариант"></textarea>
+                </div>
+
+
+                <label for="q37">37. Перечислите, пожалуйста, наименования используемых вами программных продуктов:</label>
+                <textarea id="q37" name="q37" placeholder="Введите ответ"></textarea>
+
+                <label for="q38">38. Кто в вашей компании принимает решение о внедрении нового программного продукта?</label>
+                <textarea id="q38" name="q38" placeholder="Введите ответ"></textarea>
+
+                <label for="q39">39. Занимаетесь ли вы операционным управлением в своей компании?</label>
+                <textarea id="q39" name="q39" placeholder="Введите ответ"></textarea>
+
+                <label for="q40">40. Кто на период вашего отсутствия исполняет ваши обязанности?</label>
+                <textarea id="q40" name="q40" placeholder="Введите ответ"></textarea>
+
+                <label for="q41">41. Насколько вам нравится заниматься операционной деятельностью? (1 - совсем не нравится, 10 - обожаю):</label>
+                <input type="number" id="q41" name="q41" min="1" max="10">
+
+                <label for="q42">42. Сколько часов в день занимает у вас операционная деятельность?</label>
+                <textarea id="q42" name="q42" placeholder="Введите ответ"></textarea>
+
+                <label for="q43">43. Какие задачи вы считаете наиболее важными для себя?</label>
+                <textarea id="q43" name="q43" placeholder="Введите ответ"></textarea>
+
+                <label for="q44">44. Укажите, пожалуйста, удобный для вас контакт для связи:</label>
+                <textarea id="q44" name="q44" placeholder="Введите ответ"></textarea>
+
+                <label for="q45">45. Укажите, пожалуйста, адрес электронной почты для отправки результатов тестирования:</label>
+                <textarea id="q45" name="q45" placeholder="Введите ответ"></textarea>
+            </fieldset>
             <button type="submit">Отправить</button>
         </form>
 
